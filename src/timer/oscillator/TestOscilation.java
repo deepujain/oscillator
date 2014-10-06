@@ -5,16 +5,20 @@ import java.util.concurrent.TimeUnit;
 public class TestOscilation {
 	public static void main(String[] args) {
 		Oscillator o = new Oscillator();
-		o.start(new OscillatingTask() {
+		OscillatingTask taskON = new OscillatingTask() {
 			@Override
 			public void run() {
 				System.out.println("ON");
 			}
-		}, new OscillatingTask() {
+		};
+		
+		OscillatingTask taskOFF = new OscillatingTask() {
 			@Override
 			public void run() {
 				System.out.println("OFF");
 			}
-		}, 3, TimeUnit.SECONDS);
+		};
+
+		o.start(taskON, taskOFF, 3, TimeUnit.SECONDS);
 	}
 }

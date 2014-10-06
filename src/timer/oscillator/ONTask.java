@@ -3,7 +3,7 @@ package timer.oscillator;
 public class ONTask implements Runnable {
 	private LockState lock;
 
-	public ONTask(LockState lock) {
+	ONTask(LockState lock) {
 		this.lock = lock;
 	}
 

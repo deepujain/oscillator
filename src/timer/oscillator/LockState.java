@@ -11,7 +11,7 @@ public class LockState {
 
 	private OscilationState state = OscilationState.ON;
 
-	public void switchMe() {
+	void switchMe() {
 		if (state == OscilationState.ON) {
 			state = OscilationState.OFF;
 		} else {
@@ -19,15 +19,15 @@ public class LockState {
 		}
 	}
 
-	public OscilationState get() {
+	OscilationState get() {
 		return state;
 	}
 
-	public void runON() {
+	void runON() {
 		taskON.run();
 	}
 
-	public void runOFF() {
+	void runOFF() {
 		taskOFF.run();
 	}
 }

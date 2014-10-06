@@ -7,7 +7,8 @@ import java.util.concurrent.TimeUnit;
 public class Oscillator {
 	/**
 	 * Oscillates execution of tasks between taskON and taskOFF at a fixed rate
-	 * of period.
+	 * of period. Tasks are scheduled using ScheduledExecutorService and hence
+	 * individual tasks must catch any thrown unchecked exceptions.
 	 * 
 	 * @param taskON
 	 *            Execution starts with this task
@@ -17,6 +18,7 @@ public class Oscillator {
 	 *            oscillation rate.
 	 * @param unit
 	 *            oscillation rate unit.
+	 * @see ScheduledExecutorService
 	 */
 	public void start(OscillatingTask taskON, OscillatingTask taskOFF,
 			long period, TimeUnit unit) {
